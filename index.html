@@ -1,31 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring iOS App</title>
-    <link rel="icon" type="image/x-icon" href="profile-icon.ico">
+    <title>Sraavan Chevireddy</title>
     <style>
         body {
-            font-family: 'Avenir Book', sans-serif;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .toolbar {
+           background-color: #000;
+            color: #fff;
+           display: flex;
+            justify-content: space-between;
+           align-items: center;
+            padding: 0 10px;
+            flex-wrap: wrap;
+        }
+       .container{
+            max-width: 960px;
+            margin: auto;
+            padding: 20px;
+        }
+        .toolbar img {
+            height: 40px;
+        }
+        .toolbar__right {
+            display: flex;
+           align-items: center;
+            flex-wrap: wrap;
+        }
+        .project{
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .project-title{
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .toolbar button {
+            background: none;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+           position: relative;
+            display: inline-block;
+            margin: 5px;
+        }
+        .toolbar button::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background-color: #fff;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+        .toolbar button:hover::after {
+            transform: scaleX(1);
+        }
+        .toolbar button:hover {
+            transform: translateY(-3px);
+       }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #f2f2f2;
+            }
+            .project {
+                background-color: #444;
+            }
+            .project-title{
+                color: #00CCFF;
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #f2f2f2;
+                color: #333;
+            }
+            .project {
+                background-color: #fff;
+            }
+            .project-title{
+                color: #007BFF;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Spring iOS App</h1>
-    <p><strong>Feb, 2023 - Present</strong></p>
-    <p><strong>Client:</strong> LendingTree, Charlotte, NC USA</p>
-    <p><strong>Role:</strong> Senior Software Engineer - iOS, (Full-Time)</p>
-    <p><strong>AppStore URL:</strong> <a href="Spring By LendingTree">Spring By LendingTree</a></p>
-
-    <h2>Responsibilities:</h2>
-    <ul>
-        <li>Collaborated with fellow developers in Mobile App Brainstorm sessions to generate innovative ideas for the new app.</li>
-        <li>Collaborated with the design team and engaged with Product Owners to address platform disparities and determine optimal user experience and ecosystem considerations specifically tailored for iOS devices.</li>
-        <li>Gained experience in using the NavigationPath with NavigationStack to support the App for both iPhone and iPad in SwiftUI.</li>
-        <!-- Add other responsibilities as list items -->
-    </ul>
-
-    <p>Feel free to add more details or structure the content differently based on your needs.</p>
+    <div class="toolbar">
+        <img src="banner.png" alt="My Logo">
+        <div>
+            <button>Projects</button>
+            <button>Education</button>
+            <button>Resume</button>
+            <button>Contact</button>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Sraavan Chevireddy's Mobile Development Portfolio</h1>
+        <div class="project">
+            <h2 class="project-title">Project 1</h2>
+            <p>Details about Project 1...</p>
+        </div>
+        <div class="project">
+            <h2 class="project-title">Project 2</h2>
+            <p>Details about Project 2...</p>
+        </div>
+    </div>
 </body>
 </html>
