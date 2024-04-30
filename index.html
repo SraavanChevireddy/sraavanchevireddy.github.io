@@ -4,13 +4,29 @@
     <title>Sraavan Chevireddy - Portfolio </title>
     <link rel="icon" href="profile-icon.ico" type="image/x-icon">
     <style>
-      * {
+      @import url('https://fonts.googleapis.com/css2?family=Avenir:wght@300;900&display=swap');
+      .avenir-light {
+          font-family: 'Avenir', sans-serif;
+          font-weight: 300;
+        }.avenir-bold {
+          font-family: 'Avenir', sans-serif;
+          font-weight: 900;
+        }.left-align {
+            text-align: left;
+        }* {
           margin: 0;
           padding: 0;
-            box-sizing: border-box;
+          box-sizing: border-box;
        }
         body {
             font-family: Arial, sans-serif;
+        }.paragraph-space {
+          margin-bottom: 20px;
+        }.underline {
+          text-decoration: underline;
+          text-underline-offset: 2.5px;
+        }.linespace {
+          margin-bottom: 5px;
         }
         .toolbar {
             position: fixed;
@@ -50,6 +66,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }.company-icon {
+          width: 3vw;
+          height: 3vw;
+          max-width: 20px;
+          max-height: 20px;
         }
         .container {
             max-width: 960px;
@@ -101,7 +122,7 @@
                 background-color: #444;
             }
             .project-title {
-                color: #00CCFF;
+                color: rgb(233, 233, 233)
             }
         }
         @media (prefers-color-scheme: light) {
@@ -113,7 +134,7 @@
                 background-color: #fff;
             }
             .project-title {
-                color: #007BFF;
+                color: #333333;
             }
         }
       </style>
@@ -123,9 +144,19 @@
     <div class="toolbar">
         <img src="banner.png" alt="My Logo">
         <div>
-            <button>Projects</button>
+            <button id="projects-button">Projects</button>
+            <script>
+              document.getElementById('projects-button').addEventListener("click", function() {
+                 document.getElementById('projects-div').scrollIntoView({behavior: "smooth"});
+               });
+           </script>
             <button>Education</button>
-            <button>Resume</button>
+            <button onclick="openPdf()">Resume</button>
+            <script>
+                function openPdf() {
+                  window.open('SraavanChevireddy.pdf', 'Hello!');
+                }
+              </script>
             <button>Contact</button>
         </div>
     </div>
@@ -134,14 +165,53 @@
           <img src="profile-icon.ico" alt="Sraavan Chevireddy">
       </div>
       <div class="container">
-          <h1>Sraavan Chevireddy's Mobile Development Portfolio</h1>
-          <div class="project">
-              <h2 class="project-title">Project 1</h2>
-              <p>Details about Project 1...</p>
+          <h1><span class="avenir-bold">Sraavan</span><span class="avenir-light">, Chevireddy</span></h1>
+          <h3 class="avenir-light underline paragraph-space">Summary:</h3>
+          <p class="avenir-light left-align paragraph-space">This is the portfolio of my iOS Development career. I embarked on this career path in June 2016, accumulating a great hands-on experience in crafting iOS applications.</p>
+          <p class="avenir-light left-align paragraph-space">I enjoy; all the challenges this industry offers delivery, leadership, technology, customer satisfaction, innovation, and ongoing learning. Every project is a different experience.</p>
+          <p class="avenir-light left-align paragraph-space">I got deeper insights into code optimization, performance, and robust, concrete-designed mobile application development mechanisms. Profound analysis of the business requirements, technical analysis, and confer and disband the work with fellow developers as a part of typical work life.</p>
+          <p id="projects-div" class="avenir-light left-align paragraph-space">Excellent technical aptitude - Experienced working with Swift, Package manager, Collections & Design Patterns - MVC, MVVM, VIPER. Proven experience in technical experimentation</p>
+
+          <div>
+            <img class="company-icon" src="tree.png">
+              <h2 class="project-title avenir-bold">Spring By LendingTree</h2>
+                  <ul>
+                    <li class="avenir-light linespace">Team knows me for contribution to the revamped edition of the iOS app. Leveraged the cutting-edge technology stack. This entailed eliminating outdated code, restructuring the architecture, and adopting Apple's latest design Library, SwiftUI, for UI development.</li>
+                    <li class="avenir-light linespace">Collaborated with fellow developers in Mobile App Brainstorm sessions to generate innovative ideas for the new app.</li>
+                    <li class="avenir-light linespace">Collaborated with the design team and engaged with Product Owners to address platform disparities and determine optimal user experience and ecosystem considerations specifically tailored for iOS devices.</li>
+                    <li class="avenir-light linespace">Leveraged the comprehensive features of Apple's Combine framework: this includes AnyPublishers, Cancellables and type-erase properties.</li>
+                    <li class="avenir-light linespace">Adapted the `actor` and `@MainActor` classes within the SwiftUI framework to mitigate data race conditions and prevent unforeseen concurrency crashes</li>
+                    <li class="avenir-light linespace">Worked on Universal links for establishing the Deeplinks to the iOS app. Gained experience in integrating and maintaining the Third-party libraries like, Split.IO, GlassBox, Blueshift and AppsFlyer.</li>
+                    <li class="avenir-light linespace">Worked with Instruments for measuring the App performance metrics and Time Profiler for measuring the areas of improvement.</li>
+                    <li class="avenir-light linespace">Gained experience in configuring and maintaining the Fastlane Pipeline for distributing the App to various environments/schemes.</li>
+                    <li class="avenir-light linespace">Aimed to maintain a code-coverage of more than 80% for testing the key areas of Business implementation.</li>
+                  </ul>
           </div>
-          <div class="project">
-              <h2 class="project-title">Project 2</h2>
+
+          <div>
+              <h2 class="project-title avenir-bold">Project 2</h2>
               <p>Details about Project 2...</p>
+              <ul>
+                <li class="avenir-light linespace">Worked closely with the Product Owner and Business analysts for understanding the business model and product requirements.</li>
+                <li class="avenir-light linespace">Architecting the business model in Swift Code.</li>
+                <li class="avenir-light linespace">Used SwiftUI, a Combine framework with Publishers, Cancellable, and Task groups for the app to interact with GraphQL backend.</li>
+                <li class="avenir-light linespace">Experience in creating the Local Swift Packages and configuring the dependency management with other Local SPM.</li>
+                <li class="avenir-light linespace">Integrated the Apollo GraphQL client for iOS Application to communicate with the backend.</li>
+                <li class="avenir-light linespace">Developed YAML for CI/CD using Azure Pipeline to streamline the build distribution management.</li>
+                <li class="avenir-light linespace">Robust experience in build the voice recorder functionality using the AVFoundation and AudioToolBox. Added additional features to voice recorder like Insert and Overwrite the Audio Files based on Timestamp.</li>
+                <li class="avenir-light linespace">Worked on CloudKit public and private containers for generating ecosystem synchronisation across our iPad and MacOs app along side of iOS devices.</li>
+                <li class="avenir-light linespace">Peer code reviews and adept the latest and greatest coding practices to work on Apple’s contemporary framework of Combine.</li>
+                <li class="avenir-light linespace">Experience using the `Charles Proxy`, a web interceptor tool for HTTP monitoring.</li>
+                <li class="avenir-light linespace">Worked alongside other developers for Application bug fixes and thread management.</li>
+                <li class="avenir-light linespace">Addressed the issues of memory leaks as the customer adaption increased to 200% and lowered the attrition rate.</li>
+                <li class="avenir-light linespace">Responsible for building the complex UI animations with Core Animation, bezier curves and paths.</li>
+                <li class="avenir-light linespace">Experience in developing the View-Models following the SOLID principles, which made the Application extend to the new add-on features.</li>
+                <li class="avenir-light linespace">Gained experience in integrating the Box iOS SDK for creating a backup to the cloud.</li>
+                <li class="avenir-light linespace">Designed a newer generation skin application without disturbing the existing business workflow.</li>
+                <li class="avenir-light linespace">Integrated the document manager to view/edit documents using pages using PDFKit, QLPreview, and Document kit.</li>
+                <li class="avenir-light linespace">Maintaining the application on feedback and production hot fixes.</li>
+                <li class="avenir-light linespace">Worked on team that believed in Agile methodology. Experience in understanding the Agile terminologies of Agile Poker, Grooming and Spring Planning.</li>
+            </ul>
           </div>
       </div>
   </div>
