@@ -5,38 +5,57 @@
     <link rel="icon" href="profile-icon.ico" type="image/x-icon">
     <style>
       * {
-         margin: 0;
-         padding: 0;
-          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+            box-sizing: border-box;
+       }
+        body {
+            font-family: Arial, sans-serif;
         }
-       body {
-           font-family: Arial, sans-serif;
-            padding-top: 70px; 
-        }
-       .toolbar {
+        .toolbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 50px;
+            height: 60px;
             background-color: #000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 10px;
-            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25); 
+            padding: 10px;
+            z-index: 10;
         }
         .toolbar img {
-            height: 30px;
+            height: 40px;
         }
         .toolbar__right {
             display: flex;
             align-items: center;
         }
+        .main-content {
+            padding-top: 80px; /* To make sure content is below the fixed toolbar */
+            display: flex; /* To align the image and the rest of the content side by side */
+            flex-wrap: wrap; /* Makes sure content below image drops down when there's not ough space */
+        }
+        .image-container {
+            width: 30vw;
+            max-width: 300px;
+            height: 30vw;
+            max-height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 10px;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .container {
             max-width: 960px;
             margin: auto;
             padding: 20px;
+            flex-grow:1; /* Allows this div to take the remaining space within the flex container */
         }
         .project {
             border: 1px solid #ddd;
@@ -50,14 +69,14 @@
         .toolbar button {
             background: none;
             color: #fff;
-           border: none;
+            border: none;
             padding: 5px;
             cursor: pointer;
-            font-size: 16px; 
+            font-size: 16px;
             margin-left: 5px;
             transition: all 0.3s ease;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 2px rgba(0,0,0,0.3);
         }
         .toolbar button::after {
             content: "";
@@ -70,7 +89,7 @@
             transform: scaleX(0);
             transition: all 0.3s ease-in-out;
         }
-       .toolbar button:hover::after {
+        .toolbar button:hover::after {
             transform: scaleX(0.9);
         }
         @media (prefers-color-scheme: dark) {
@@ -110,16 +129,21 @@
             <button>Contact</button>
         </div>
     </div>
-    <div class="container">
-        <h1>Sraavan Chevireddy's Mobile Development Portfolio</h1>
-        <div class="project">
-            <h2 class="project-title">Project 1</h2>
-            <p>Details about Project 1...</p>
-        </div>
-        <div class="project">
-            <h2 class="project-title">Project 2</h2>
-            <p>Details about Project 2...</p>
-        </div>
-    </div>
+    <div class="main-content">
+      <div class="image-container">
+          <img src="profile-icon.ico" alt="Sraavan Chevireddy">
+      </div>
+      <div class="container">
+          <h1>Sraavan Chevireddy's Mobile Development Portfolio</h1>
+          <div class="project">
+              <h2 class="project-title">Project 1</h2>
+              <p>Details about Project 1...</p>
+          </div>
+          <div class="project">
+              <h2 class="project-title">Project 2</h2>
+              <p>Details about Project 2...</p>
+          </div>
+      </div>
+  </div>
 </body>
 </html>
